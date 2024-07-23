@@ -1,0 +1,224 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  color: #eee;
+  font-family: Poppins;
+  font-size: 18px;
+  box-sizing: border-box;
+  list-style: none;
+  scroll-behavior: smooth;
+  transition: 0.5s;
+}
+
+header {
+  width: 1140px;
+  max-width: 100%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+header a {
+  color: #eee;
+  margin-right: 40px;
+}
+.carousel {
+  height: 100vh;
+  margin-top: -50px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .list .item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel .list .item .content {
+  position: absolute;
+  top: 20%;
+  width: 1140px;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-right: 30%;
+  box-sizing: border-box;
+  color: #f5d441;
+  text-shadow: 0 5px 10px #0004;
+}
+.carousel .list .item .author {
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 80px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 50px;
+}
+.carousel .list .item .topic {
+  color: #c05632;
+}
+.carousel .list .item .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: 40px;
+  gap: 5px;
+  margin-top: 20px;
+}
+.carousel .list .item .buttons button {
+  border: none;
+  background-color: #eee;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2) {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #eee;
+}
+section {
+  display: flex;
+  gap: 25px;
+  margin-left: 450px;
+  margin-top: 80px;
+  top: -80px;
+}
+.slider {
+  position: absolute;
+  bottom: 20px;
+  left: 30%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.slider .slide {
+  width: 170px;
+  height: 200px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.slider .slide:hover img {
+  transform: scale(1.25);
+  border-radius: 30px;
+  transform: scale(1.25);
+}
+.slider .slide .content {
+  color: #fff;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+}
+.slider .slide .content .title {
+  font-weight: 500;
+}
+.slider .slide .content .description {
+  font-weight: 300;
+}
+
+.list .item:nth-child(1) {
+  z-index: 2;
+}
+
+.slide .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 150vh;
+  object-fit: cover;
+  pointer-events: none;
+  filter: brightness(0.6);
+  opacity: 3;
+}
+.slide:hover {
+  width: 80px;
+  opacity: 2;
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+.slide .layer {
+  width: 100%;
+  height: 48%;
+  border-radius: 20px;
+  margin-top: -250px;
+  position: relative;
+  background: linear-gradient(to top, rgba(237, 234, 186, 0.9), transparent);
+}
+.slider .layer .content {
+  width: 260px;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  opacity: 0;
+}
+.slider:hover .layer .content {
+  opacity: 1;
+}
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 1s linear 1 forwards;
+}
+@keyframes showContent {
+  to {
+    transform: translateY(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.carousel .list .item:nth-child(1) .content .title {
+  animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .content .topic {
+  animation-delay: 1.4s !important;
+}
+.carousel .list .item:nth-child(1) .content .des {
+  animation-delay: 1.6s !important;
+}
+.carousel .list .item:nth-child(1) .content .buttons {
+  animation-delay: 1.8s !important;
+}
+.carousel.next .list .item:nth-child(1) img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  border-radius: 30px;
+  animation: showImage 0.5s linear 1 forwards;
+}
